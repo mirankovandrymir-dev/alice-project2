@@ -64,7 +64,7 @@ async function askGemini(userText, history, searchResults) {
       parts: [{ text: 'Ты голосовой помощник для навыка Яндекс Алисы. Отвечай на русском. Отвечай кратко: обычно 1–3 коротких предложения. Не используй Markdown, списки, эмодзи и длинные вступления. Если нужны актуальные данные, опирайся на результаты поиска. Не выдумывай факты. Если данных недостаточно, честно скажи об этом.' }]
     },
     contents: [{ role: 'user', parts: [{ text: prompt }] }],
-    generationConfig: { temperature: 0.4, maxOutputTokens: 300 }
+    generationConfig: { temperature: 0.4, maxOutputTokens: 4000 }
   };
 
   const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`, {
